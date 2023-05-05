@@ -1,0 +1,100 @@
+.light {
+    --light-color: #fff;
+    --background-color: var(--light-color);
+    --text-color: #000;
+    --footer-background-color: var(--light-color);
+}
+
+.dark {
+    --dark-color:#141212;
+    --background-color: var(--dark-color);
+    --text-color: #fff;
+    --footer-background-color: var(--dark-color);
+}   
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: "Poppins" ;
+}
+
+footer {
+    background-color: var(--footer-color);
+}
+
+a {
+    color: var(--text-color);
+}
+
+p {
+    font-size: 1rem;
+}
+
+#app {
+    width: 100%;
+}
+
+.__title {
+    margin-top: 1rem;
+    margin-bottom: .5rem;
+    font-size: 20px;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.nav-link {
+    color: var(--text-color);
+}
+
+.nav-link:hover {
+    color: var(--text-color);
+}
+
+.nav-item {
+    cursor: pointer;
+}
+
+.nav__active {
+    border-bottom: 1.5px solid var(--text-color);
+}
+
+.mode__icon {
+    width: 20px;
+    height: 20px;
+}
+
+.__fa-icon {
+    font-size: 25px;
+}
+
+#content {
+    margin-top: 40px;
+}
+
+.content__title {
+    margin-bottom: 30px;
+}
+
+.stretchy-container {
+    width: 40%;
+}
+
+img.stretchy {
+    width: 100%;
+}
+
+.list-style-none {
+    list-style: none;
+}
+
+.experience {
+    margin-bottom: 80px;
+    /* border-top: 2px solid var(--text-color);
+    border-bottom: 2px solid var(--text-color); */
+}
+
+.__portofolio {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border-bottom: 1px solid var(--text-color);
+}
