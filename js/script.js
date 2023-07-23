@@ -1,7 +1,24 @@
+const lightModeClass = {
+  mode: "light",
+  revertMode: "dark",
+  iconSrc: "img/icon/moon.ico",
+};
+
+const darkModeClass = {
+  mode: "dark",
+  revertMode: "light",
+  iconSrc: "img/icon/moon.ico",
+};
+
+// set data when document loaded
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("content").innerHTML = getData("__about");
 });
 
+// load navbar items
+document.querySelector(".__navbar").innerHTML = navbarItemsElements();
+
+// give function to .nav-links for changing the page
 var navbarLink = document.querySelectorAll(".nav-link");
 navbarLink.forEach((element) => {
   element.addEventListener("click", (e) => {
@@ -24,25 +41,27 @@ navbarLink.forEach((element) => {
   });
 });
 
+// set page mode (light or dark)
 var modeIcon = document.querySelector(".mode__icon");
 modeIcon.setAttribute("src", "img/icon/sun.ico");
 modeIcon.addEventListener("click", (e) => {
   var elementTarget = e.target;
-  var mode = elementTarget.getAttribute("mode");
-  var bodyClass, iconSrc;
+  var body = document.querySelector("body");
+  var currentMode = elementTarget.getAttribute("mode");
+  var bodyClass, iconSrc, objectModeClass;
 
-  if (mode == "light") {
-    bodyClass = "light";
-    mode = "dark";
-    iconSrc = "img/icon/moon.ico";
+  // checking mode
+  if (currentMode === lightModeClass.mode) {
+    objectModeClass = lightModeClass;
   } else {
-    bodyClass = "dark";
-    mode = "light";
-    iconSrc = "img/icon/sun.ico";
+    objectModeClass = darkModeClass;
   }
 
-  document.querySelector("body").setAttribute("class", bodyClass);
+  bodyClass = objectModeClass.mode;
+  revertMode = objectModeClass.revertMode;
+  iconSrc = objectModeClass.iconSrc;
 
-  elementTarget.setAttribute("mode", mode);
+  body.setAttribute("class", bodyClass);
+  elementTarget.setAttribute("mode", revertMode);
   elementTarget.setAttribute("src", iconSrc);
 });

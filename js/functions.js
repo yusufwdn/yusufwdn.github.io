@@ -12,16 +12,13 @@ function getData(dataType) {
           <p>I am Yusuf Wandana, a person who is very interested in technology, especially software development.</p>
           <p>
             The things that interests me the most in software development is about teamwork and problem solving.
-            Why? Because there is pleasure in me when I can solve problems.
-            Especially if we work in a team, where we can work together, help each other and share ideas.
+            Because there is pleasure in me when I can solve problems.
           </p>
           <p>
-            On the other hand, I also like sports activities and learning something new. 
-            By exercising I can keep my body healthy and not susceptible to disease. 
-            When working and studying with a healthy body will certainly add enthusiasm 
-            to do it.
+            On the other hand, I like to play sports and learn something new. 
+            A healthy body is one of the factors in increasing enthusiasm at work.
           </p>
-          <p>If you are curious and want to know more about me, you can contact me <a href="#">here</a>.</p>
+          <p>If you want to know more about me, you can contact me <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=yusuf.wandana1@gmail.com" target="_blank">here</a>.</p>
         `;
       break;
     case "__experiences":
@@ -42,13 +39,13 @@ function getData(dataType) {
             </div>
             <div class="body-experience">
               <div style="margin-top: 10px">
-                <p style="margin-bottom: 0">Job Description:</p>
+                <p style="margin-bottom: 0">Job Descriptions:</p>
                 <ul>
                   <li>
-                    Create database design according to client needs. 
+                    Analyze the flow of the system based on what the client needs.
                   </li>
                   <li>
-                    Develop API service for application needs.
+                    Developing API services for use on web/mobile applications
                   </li>
                   <li>
                     Design, develop, and maintain web-based application.
@@ -62,10 +59,10 @@ function getData(dataType) {
                 <p style="margin-bottom: 0">Technology Used:</p>
                 <ul>
                   <li>HTML</li>
-                  <li>CSS (Bootstrap, Tailwind)</li>
-                  <li>Javascript (Vanilla Javascript, JQuery)</li>
-                  <li>PHP (Laravel)</li>
-                  <li>MySQL, PostgreeSQL</li>
+                  <li>CSS (Bootstrap, TailwindCSS)</li>
+                  <li>Javascript</li>
+                  <li>PHP (Laravel, CodeIgniter)</li>
+                  <li>MySQL, PostgreSQL</li>
                   <li>Github, Gitlab</li>
                   <li>REST API</li>
                 </ul>
@@ -86,7 +83,7 @@ function getData(dataType) {
             </div>
             <div class="body-experience">
               <div style="margin-top: 10px">
-                <p style="margin-bottom: 0">Job Description:</p>
+                <p style="margin-bottom: 0">Job Descriptions:</p>
                 <ul>
                   <li>
                     Develop reporting application for monthly financial report in a
@@ -171,7 +168,7 @@ function getData(dataType) {
             </div>
             <div class="d-flex justify-content-start my-3">
               <i class="fab fa-github __fa-icon mx-3"></i>
-              <a href="https://github.com/cupskydev" target="_blank" class="mb-1">@cupskydev</a>
+              <a href="https://github.com/yusufwdn" target="_blank" class="mb-1">@yusufwdn</a>
             </div>
           </div>
         </div>
@@ -183,4 +180,48 @@ function getData(dataType) {
   }
 
   return content;
+}
+
+function navbarItems() {
+  return [
+    {
+      title: "About",
+      pageData: "__about",
+    },
+    {
+      title: "Experiences",
+      pageData: "__experiences",
+    },
+    {
+      title: "Portofolio",
+      pageData: "__portofolio",
+    },
+    {
+      title: "Contact",
+      pageData: "__contact",
+    },
+  ];
+}
+
+function navbarItemsElements() {
+  var navItems = "";
+  for (const navItem of navbarItems()) {
+    var navActive = navItem.pageData === "__about" ? "nav__active" : "";
+    navItems += `
+    <li class="nav-item">
+      <span class="nav-link ${navActive}" page-data="${navItem.pageData}">
+        ${navItem.title}
+      </span>
+    </li>`;
+  }
+
+  // add mode icon for change theme
+  navItems += `
+  <li class="nav-item">
+    <span class="nav-link mode">
+      <img class="mode__icon" mode="light" alt="icon-mode" />
+    </span>
+  </li>`;
+
+  return navItems;
 }
