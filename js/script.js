@@ -12,7 +12,7 @@ const darkModeClass = {
 
 // set data when document loaded
 document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("content").innerHTML = getData("__about");
+  document.getElementById("content").innerHTML = getContent("__about");
 });
 
 // load navbar items
@@ -36,7 +36,8 @@ navbarLink.forEach((element) => {
       elementClassList.add("nav__active");
 
       var pageDataAttribute = e.target.getAttribute("page-data");
-      document.getElementById("content").innerHTML = getData(pageDataAttribute);
+      document.getElementById("content").innerHTML =
+        getContent(pageDataAttribute);
     }
   });
 });

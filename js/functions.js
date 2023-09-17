@@ -1,6 +1,6 @@
-function getData(dataType) {
+function getContent(type) {
   var content = "";
-  switch (dataType) {
+  switch (type) {
     case "__about":
       content = `
           <h2 class="text-center content__title">It's All About Me!</h2>
@@ -22,136 +22,86 @@ function getData(dataType) {
         `;
       break;
     case "__experiences":
-      content = `
-        <h2 class="text-center content__title">My Experiences</h2>
-        <div class="experiences">
+      var experiences = getData(type);
+      var experience = "";
+
+      content += `<h2 class="text-center content__title">My Experiences</h2>`;
+
+      experiences.forEach((item) => {
+        var job_descriptions = "";
+        item.job_descriptions?.forEach((item) => {
+          job_descriptions += `<li>${item}</li>`;
+        });
+
+        var tech_stacks = "";
+        item.tech_stacks?.forEach((item) => {
+          tech_stacks += `<li>${item}</li>`;
+        });
+
+        experience += `
           <div class="experience">
             <div class="head-experience text-center">
               <div class="d-flex justify-content-center mb-4">
                 <div class="stretchy-container text-center">
-                  <img src="img/wan-logo.png" alt="me" class="stretchy" />
+                  <img src="${item.thumbnail}" alt="me" class="stretchy" />
                 </div>
               </div>
-              <span class="d-block" style="font-size: 18px">Web & Back-end Developer</span>
-              <span class="d-block" style="font-size: 16px">
-                PT. WAN Teknologi Internasional
-              </span>
+              <span class="d-block" style="font-size: 18px">${item.job_title}</span>
+              <span class="d-block" style="font-size: 16px">${item.company_name}</span>
             </div>
             <div class="body-experience">
               <div style="margin-top: 10px">
                 <p style="margin-bottom: 0">Job Descriptions:</p>
                 <ul>
-                  <li>
-                    Analyze the flow of the system based on what the client needs.
-                  </li>
-                  <li>
-                    Developing API services for use on web/mobile applications
-                  </li>
-                  <li>
-                    Design, develop, and maintain web-based application.
-                  </li>
-                  <li>
-                    Refactor code to make it easier to read and maintain.
-                  </li>
+                  ${job_descriptions}
                 </ul>
               </div>
               <div style="margin-top: 10px">
                 <p style="margin-bottom: 0">Technology Used:</p>
                 <ul>
-                  <li>HTML</li>
-                  <li>CSS (Bootstrap, TailwindCSS)</li>
-                  <li>Javascript</li>
-                  <li>PHP (Laravel, CodeIgniter)</li>
-                  <li>MySQL, PostgreSQL</li>
-                  <li>Github, Gitlab</li>
-                  <li>REST API</li>
+                  ${tech_stacks}
                 </ul>
               </div>
             </div>
           </div>
-          <div class="experience">
-            <div class="head-experience text-center">
-              <div class="d-flex justify-content-center mb-4">
-                <div class="stretchy-container text-center">
-                  <img src="img/intelsysdata-logo.png" alt="me" class="stretchy" />
-                </div>
-              </div>
-              <span class="d-block" style="font-size: 18px">ETL Developer</span>
-              <span class="d-block" style="font-size: 16px">
-                PT. Madani Intelsysdata
-              </span>
-            </div>
-            <div class="body-experience">
-              <div style="margin-top: 10px">
-                <p style="margin-bottom: 0">Job Descriptions:</p>
-                <ul>
-                  <li>
-                    Develop reporting application for monthly financial report in a
-                    bank.
-                  </li>
-                  <li>
-                    Maintenance existing application (add new features and bug fixing).
-                  </li>
-                  <li>
-                    Become a consultant to assist finance companies in working on
-                    monthly financial reports.
-                  </li>
-                </ul>
-              </div>
-              <div style="margin-top: 10px">
-                <p style="margin-bottom: 0">Technology Used:</p>
-                <ul>
-                  <li>Extract, Transform, Load (using ETL Tools)</li>
-                  <li>SQL Query (using SQL Server)</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      `;
+          `;
+      });
+
+      content += experience;
       break;
     case "__portofolio":
-      content = `
-        <h2 class="text-center content__title">Portofolio</h2>
-        <div class="card __portofolio">
-            <div class="card-body">
-            <div class="d-flex justify-content-center mb-4">
-                <div class="stretchy-container text-center">
-                <img
-                    src="img/portofolio/crypindo.png"
-                    alt="crypindo-logo"
-                    class="stretchy"
-                />
+      var portofolios = getData(type);
+      content += `<h2 class="text-center content__title">Portofolio</h2>`;
+
+      portofolios.forEach((item) => {
+        var tech_stacks = item.tech_stacks?.join(", ");
+        content += `
+          <div class="card __portofolio mb-3">
+              <div class="card-body">
+                <div class="d-flex justify-content-center mb-4">
+                    <div class="stretchy-container text-center">
+                      <img src="${item.thumbnail}" alt="${item.title}" class="stretchy" />
+                    </div>
                 </div>
-            </div>
-            <p>
-                Crypindo is a website for tracking the latest crypto price.
-                All the data in this web is retrieved from
-                <a href="https://coingecko.com" target="_blank">
-                API CoinGecko
-                </a>
-                . Fun fact, This is my first experience build a website using
-                ReactJs and Tailwind.
-            </p>
-            <table>
-                <tr>
-                <td>URL</td>
-                <td class="text-center" width="20px">:</td>
-                <td>
-                    <a href="https://crypindo.netlify.app">
-                    https://crypindo.netlify.app
-                    </a>
-                </td>
-                </tr>
-                <tr>
-                <td>Technology stack</td>
-                <td class="text-center" width="20px">:</td>
-                <td>Javascript, ReactJs, Tailwind</td>
-                </tr>
-            </table>
-            </div>
-        </div>
-      `;
+                <p>${item.description}</p>
+                <table>
+                    <tr>
+                      <td>URL</td>
+                      <td class="text-center" width="20px">:</td>
+                      <td>
+                        <a href="${item.url}">${item.url}</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Technology stack</td>
+                      <td class="text-center" width="20px">:</td>
+                      <td>${tech_stacks}</td>
+                    </tr>
+                </table>
+              </div>
+          </div>
+        `;
+      });
       break;
     case "__contact":
       content = `
@@ -224,4 +174,68 @@ function navbarItemsElements() {
   </li>`;
 
   return navItems;
+}
+
+function getData(type) {
+  switch (type) {
+    case "__experiences":
+      return [
+        {
+          job_title: "Web & Back-end Developer",
+          company_name: "PT. WAN Teknologi Internasional",
+          job_descriptions: [
+            "Analyze the client's desired application system flow.",
+            "Collaborate with other teams on projects.",
+            "Design, develop, and maintenance web based application.",
+            "Develop API services for web and/or mobile application needs.",
+            "Integrate applications with third-party services like payment gateway, PPOB system, SMS gateway, shipment service, etc.",
+            "Refactor the code to make it more readable by other teams and easy to maintain.",
+          ],
+          thumbnail: "img/wan-logo.png",
+          website_url: "https://crypindo.netlify.app",
+          tech_stacks: [
+            "HTML",
+            "CSS (Bootstrap, TailwindCSS)",
+            "Javascript",
+            "PHP (Laravel, CodeIgniter)",
+            "MySQL, PostgreSQL",
+            "Github, Gitlab",
+            "REST API",
+          ],
+        },
+        {
+          job_title: "ETL Developer",
+          company_name: "PT. Madani Intelsysdata",
+          job_descriptions: [
+            "Develop reporting application for monthly financial report in a bank.",
+            "Maintenance existing application (add new features and bug fixing).",
+            "Become a consultant to assist finance companies in working on monthly financial reports.",
+          ],
+          thumbnail: "img/intelsysdata-logo.png",
+          website_url: "https://crypindo.netlify.app",
+          tech_stacks: [
+            "Microsoft SQL Server",
+            "SQL Server Data Tools",
+            "SQL Server Integration Service",
+            "SQL Server Reporting Service",
+          ],
+        },
+      ];
+    case "__portofolio":
+      return [
+        {
+          title: "Crypindo",
+          description: `
+          Crypindo is a simple website for tracking the current crypto price.
+          All the data in this website is taken from <a href="https://coingecko.com" target="_blank">API CoinGecko</a>.
+          `,
+          thumbnail: "img/portofolio/crypindo.png",
+          url: "https://crypindo.netlify.app",
+          tech_stacks: ["Javascript", "ReactJs", "Tailwind"],
+        },
+      ];
+
+    default:
+      return [];
+  }
 }
