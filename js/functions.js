@@ -4,21 +4,26 @@ function getContent(type) {
     case "__about":
       content = `
           <h2 class="text-center content__title">It's All About Me!</h2>
-          <div class="d-flex justify-content-center mb-4">
+          <div class="d-flex justify-content-center">
             <div class="stretchy-container text-center">
               <img src="img/me.jpg" alt="me" class="stretchy" />
             </div>
           </div>
-          <p>I am Yusuf Wandana, a person who is very interested in technology, especially software development.</p>
-          <p>
-            The things that interests me the most in software development is about teamwork and problem solving.
-            Because there is pleasure in me when I can solve problems.
-          </p>
-          <p>
-            On the other hand, I like to play sports and learn something new. 
-            A healthy body is one of the factors in increasing enthusiasm at work.
-          </p>
-          <p>If you want to know more about me, you can contact me <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=yusuf.wandana1@gmail.com" target="_blank">here</a>.</p>
+          <div class="d-flex justify-content-center my-4">
+            <a href="files/CV%20Yusuf%20Wandana%20-%20Web%20&%20Back-End%20Developer.pdf" target="_blank">Download CV</a>
+          </div>
+          <div id="profile-descriptions">
+            <p>I am Yusuf Wandana, a person who is very interested in technology, especially software development.</p>
+            <p>
+              The things that interests me the most in software development is about teamwork and problem solving.
+              Because there is pleasure in me when I can solve problems.
+            </p>
+            <p>
+              On the other hand, I like to play sports and learn something new. 
+              A healthy body is one of the factors in increasing enthusiasm at work.
+            </p>
+            <p>If you want to know more about me, you can contact me <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=yusuf.wandana1@gmail.com" target="_blank">here</a>.</p>
+          </div>
         `;
       break;
     case "__experiences":
