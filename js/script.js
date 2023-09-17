@@ -7,7 +7,7 @@ const lightModeClass = {
 const darkModeClass = {
   mode: "dark",
   revertMode: "light",
-  iconSrc: "img/icon/moon.ico",
+  iconSrc: "img/icon/sun.ico",
 };
 
 // set data when document loaded
