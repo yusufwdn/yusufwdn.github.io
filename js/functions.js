@@ -139,38 +139,42 @@ const getContent = (type) => {
       }
 
       content = `
-      <div id="main-profile">
-        <h2 class="text-center content__title">It's All About Me!</h2>
-        <div class="d-flex justify-content-center">
-          <div class="stretchy-container text-center">
-            <img src="${myProfile}" alt="me" class="stretchy" />
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
+          <div id="main-profile">
+            <h2 class="text-center content__title">It's All About Me!</h2>
+            <div class="d-flex justify-content-center">
+              <div class="stretchy-container text-center">
+                <img src="${myProfile}" alt="me" class="stretchy" />
+              </div>
+            </div>
+            <div class="d-flex justify-content-center my-4">
+              <a href="${myCV}" target="_blank">Download CV</a>
+            </div>
+            <div id="profile-descriptions">
+              <p>I am Yusuf Wandana, a person who is very interested in technology, especially software development.</p>
+              <p>
+                The things that interests me the most in software development is about teamwork and problem solving.
+                Because there is pleasure in me when I can solve problems.
+              </p>
+              <p>
+                On the other hand, I like to play sports and learn something new. 
+                A healthy body is one of the factors in increasing enthusiasm at work.
+              </p>
+              <p>If you want to know more about me, you can contact me <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=yusuf.wandana1@gmail.com" target="_blank">here</a>.</p>
+            </div>
+            <div class="mt-5" id="my-skills">
+                <h2 class="text-center content__title">My Skills</h2>
+                ${skillIcons}
+            </div>
           </div>
         </div>
-        <div class="d-flex justify-content-center my-4">
-          <a href="${myCV}" target="_blank">Download CV</a>
-        </div>
-        <div id="profile-descriptions">
-          <p>I am Yusuf Wandana, a person who is very interested in technology, especially software development.</p>
-          <p>
-            The things that interests me the most in software development is about teamwork and problem solving.
-            Because there is pleasure in me when I can solve problems.
-          </p>
-          <p>
-            On the other hand, I like to play sports and learn something new. 
-            A healthy body is one of the factors in increasing enthusiasm at work.
-          </p>
-          <p>If you want to know more about me, you can contact me <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=yusuf.wandana1@gmail.com" target="_blank">here</a>.</p>
-        </div>
-        <div class="mt-5" id="my-skills">
-            <h2 class="text-center content__title">My Skills</h2>
-            ${skillIcons}
-        </div>
       </div>
-        `;
+      `;
       break;
     case "__experiences":
       var experiences = getData(type);
-      var experience = "";
+      var experience_content = "";
 
       content += `<h2 class="text-center content__title">My Experiences</h2>`;
 
@@ -185,7 +189,7 @@ const getContent = (type) => {
           tech_stacks += `<li>${item}</li>`;
         });
 
-        experience += `
+        experience_content += `
           <div class="experience">
             <div class="head-experience text-center">
               <div class="d-flex justify-content-center mb-4">
@@ -211,10 +215,16 @@ const getContent = (type) => {
               </div>
             </div>
           </div>
-          `;
+        `;
       });
 
-      content += experience;
+      content += `
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-8 col-lg-6">
+            ${experience_content}
+          </div>
+        </div>
+      `;
       break;
     case "__portofolio":
       var portofolios = getData(type);
@@ -222,8 +232,8 @@ const getContent = (type) => {
 
       portofolios.forEach((item) => {
         var tech_stacks = item.tech_stacks?.join(", ");
-        content += `
-          <div class="card __portofolio mb-3">
+        portofolio_content = `
+          <div class="card __portofolio">
               <div class="card-body">
                 <div class="d-flex justify-content-center mb-4">
                     <div class="stretchy-container text-center">
@@ -248,27 +258,38 @@ const getContent = (type) => {
               </div>
           </div>
         `;
+
+        content += `
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-8 col-lg-6">
+            ${portofolio_content}
+          </div>
+        </div>`;
       });
       break;
     case "__contact":
       content = `
-        <h2 class="text-center content__title">Contact Me!</h2>
-        <div class="row justify-content-center">
-          <div class="col-md-8">
-            <div class="d-flex justify-content-start">
-              <i class="fab fa-google __fa-icon mx-3 text-danger"></i>
-              <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=yusuf.wandana1@gmail.com" target="_blank" class="mb-1">yusuf.wandana1@gmail.com</a>
-            </div>
-            <div class="d-flex justify-content-start my-3">
-              <i class="fab fa-linkedin __fa-icon mx-3 text-primary"></i>
-              <a href="https://linkedin.com/in/yusuf-wandana" target="_blank" class="mb-1">Yusuf Wandana</a>
-            </div>
-            <div class="d-flex justify-content-start my-3">
-              <i class="fab fa-github __fa-icon mx-3"></i>
-              <a href="https://github.com/yusufwdn" target="_blank" class="mb-1">@yusufwdn</a>
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
+          <h2 class="text-center content__title">Contact Me!</h2>
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <div class="d-flex justify-content-start">
+                <i class="fab fa-google __fa-icon mx-3 text-danger"></i>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=yusuf.wandana1@gmail.com" target="_blank" class="mb-1">yusuf.wandana1@gmail.com</a>
+              </div>
+              <div class="d-flex justify-content-start my-3">
+                <i class="fab fa-linkedin __fa-icon mx-3 text-primary"></i>
+                <a href="https://linkedin.com/in/yusuf-wandana" target="_blank" class="mb-1">Yusuf Wandana</a>
+              </div>
+              <div class="d-flex justify-content-start my-3">
+                <i class="fab fa-github __fa-icon mx-3"></i>
+                <a href="https://github.com/yusufwdn" target="_blank" class="mb-1">@yusufwdn</a>
+              </div>
             </div>
           </div>
         </div>
+      </div>
       `;
       break;
 
@@ -326,7 +347,6 @@ const navbarItemsElements = () => {
 const setMode = (mode) => {
   var body = document.querySelector("body");
   var modeIcon = document.querySelector(".mode__icon");
-  // var currentMode = modeIcon.getAttribute("mode");
   var bodyClass, iconSrc, objectModeClass;
 
   // checking mode
