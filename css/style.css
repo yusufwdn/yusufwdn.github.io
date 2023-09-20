@@ -101,3 +101,9 @@ img.stretchy {
     border-right: 0;
     border-bottom: 1px solid var(--text-color);
 }
+
+#my-skills svg {
+    width: 41px;
+    height: 41px;
+    margin: 0 7.5px 15px 7.5px;
+}
