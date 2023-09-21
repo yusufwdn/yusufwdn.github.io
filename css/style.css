@@ -96,10 +96,34 @@ img.stretchy {
 .__portofolio {
     background-color: var(--background-color);
     color: var(--text-color);
-    border-top: 0;
-    border-left: 0;
-    border-right: 0;
-    border-bottom: 1px solid var(--text-color);
+    border-top: 2px solid var(--text-color);
+    border-left: 2px solid var(--text-color);
+    border-right: 2px solid var(--text-color);
+    border-bottom: 2px solid var(--text-color);
+    margin-bottom: 20px;
+    height: 100%;
+}
+
+.__portofolio svg {
+    width: 41px;
+    height: 41px;
+    margin: 0 7.5px 15px 7.5px;
+}
+
+.__portofolio .portofolio-image-container {
+    width: 700px;
+    /* height: 250px; */
+    overflow: hidden;
+}
+
+.__portofolio img.portofolio-image-fixed {
+    width: 100%;
+    /* height: 100%; */
+    object-fit: contain;
+}
+
+.__portofolio .portofolio-tech-stacks {
+    bottom: 0;
 }
 
 #my-skills svg {
