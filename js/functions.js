@@ -70,22 +70,24 @@ const getData = (type) => {
           company_name: "PT. WAN Teknologi Internasional",
           job_descriptions: [
             "Analyze the client's desired application system flow.",
-            "Collaborate with other teams on projects.",
-            "Design, develop, and maintenance web based application.",
-            "Develop API services for web and/or mobile application needs.",
+            "Design, develop, test, and maintain web application systems",
+            "Develop API services for web and mobile application developer needs on projects.",
             "Integrate applications with third-party services like payment gateway, PPOB system, SMS gateway, shipment service, etc.",
-            "Refactor the code to make it more readable by other teams and easy to maintain.",
+            "Collaborate with other teams on projects to achieve project target.",
+            "Ensuring the codes is readable and easy to maintain.",
           ],
           thumbnail: "img/company/wan-logo.png",
           website_url: "https://crypindo.netlify.app",
           tech_stacks: [
-            "HTML",
-            "CSS (Bootstrap, TailwindCSS)",
-            "Javascript",
-            "PHP (Laravel, CodeIgniter)",
+            "HTML, CSS, Javascript",
+            "Bootstrap, TailwindCSS",
+            "JQuery",
+            "AJAX",
+            "PHP (Laravel, Lumen, CodeIgniter)",
             "MySQL, PostgreSQL",
-            "Github, Gitlab",
+            "Object Oriented Programming",
             "REST API",
+            "Git Versioning Control (Github, Gitlab)",
           ],
         },
         {
@@ -116,7 +118,7 @@ const getData = (type) => {
           thumbnail: "img/portofolio/bumdes-kita.png",
           url: "https://crypindo.netlify.app",
           tech_stacks: [
-            "Lumen Framework",
+            "Lumen",
             "PHP",
             "MySQL",
             "REST API",
@@ -148,7 +150,7 @@ const getData = (type) => {
           thumbnail: "img/portofolio/sin-indonesia.png",
           url: "https://crypindo.netlify.app",
           tech_stacks: [
-            "Lumen Framework",
+            "Lumen",
             "PHP",
             "MySQL",
             "REST API",
@@ -167,8 +169,7 @@ const getContent = (type) => {
   switch (type) {
     case "__about":
       var myProfile = "img/profile/me.jpg";
-      var myCV =
-        "files/CV%20Yusuf%20Wandana%20-%20Web%20&%20Back-End%20Developer.pdf";
+      var myCV = "files/CV_Yusuf_Wandana_-_Web_Developer.pdf";
 
       var skillIcons = "";
       var __skillIcons = getData("__skillIcons");
@@ -183,29 +184,23 @@ const getContent = (type) => {
       <div class="row justify-content-center">
         <div class="col-12 col-md-8 col-lg-6">
           <div id="main-profile">
-            <h2 class="text-center content__title">It's All About Me!</h2>
+            <h2 class="text-center content__title">It's About Me!</h2>
             <div class="d-flex justify-content-center">
               <div class="stretchy-container text-center">
-                <img src="${myProfile}" alt="me" class="stretchy" />
+                <img src="${myProfile}" alt="me" class="profile" />
               </div>
             </div>
             <div class="d-flex justify-content-center my-4">
               <a href="${myCV}" target="_blank">Download CV</a>
             </div>
             <div id="profile-descriptions">
-              <p>I am Yusuf Wandana, a person who is very interested in technology, especially software development.</p>
-              <p>
-                The things that interests me the most in software development is about teamwork and problem solving.
-                Because there is pleasure in me when I can solve problems.
-              </p>
-              <p>
-                On the other hand, I like to play sports and learn something new. 
-                A healthy body is one of the factors in increasing enthusiasm at work.
-              </p>
+              <p>I'm Yusuf Wandana, a person who is very interested in technology, especially software development.</p>
+              <p>The things that interest me in software development are analysis, teamwork, and problem-solving. There is a sense of joy within me when I can solve problems in my own way.</p>
+              <p></p>
               <p>If you want to know more about me, you can contact me <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=yusuf.wandana1@gmail.com" target="_blank">here</a>.</p>
             </div>
             <div class="mt-5" id="my-skills">
-                <h2 class="text-center content__title">My Skills</h2>
+                <h4 class="text-left content__title">My Skills</h4>
                 ${skillIcons}
             </div>
           </div>
@@ -249,7 +244,7 @@ const getContent = (type) => {
                 </ul>
               </div>
               <div style="margin-top: 10px">
-                <p style="margin-bottom: 0">Technology Used:</p>
+                <p style="margin-bottom: 0">Technology stacks:</p>
                 <ul>
                   ${tech_stacks}
                 </ul>
