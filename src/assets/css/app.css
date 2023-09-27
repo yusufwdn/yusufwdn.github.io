@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600&display=swap');
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: "Poppins";
+}
+
+.light-theme {
+    --light-color: #fff;
+    --background-color: var(--light-color);
+    --text-color: #000;
+    --footer-background-color: var(--light-color);
+}
+
+.dark-theme {
+    --dark-color: #141212;
+    --background-color: var(--dark-color);
+    --text-color: #fff;
+    --footer-background-color: var(--dark-color);
+}
+
+.header-name {
+    margin-top: 1rem;
+    margin-bottom: .5rem;
+    font-size: 20px;
+    font-weight: 600;
+    font-style: italic;
+}
+
+input:checked~.dot {
+    transform: translateX(100%);
+    /* background-color: #132b50; */
+}
