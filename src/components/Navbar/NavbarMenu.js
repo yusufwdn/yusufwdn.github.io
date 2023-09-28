@@ -2,28 +2,32 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import sunIcon from "../../assets/icons/sun.ico";
-import moonIcon from "../../assets/icons/moon.ico";
+import moonIcon from "../../assets/icons/moon-yellow.ico";
 
 export default function NavbarMenu() {
-  const [darkTheme, setDarkTheme] = useState(false);
+  const [lightTheme, setlightTheme] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
 
   const menu = [
     {
-      title: "About",
+      title: "Home",
       to: "/",
     },
     {
       title: "Experience",
-      to: "/",
+      to: "/experience",
     },
     {
       title: "Portofolio",
-      to: "/",
+      to: "/portofolio",
+    },
+    {
+      title: "Skills",
+      to: "/skills",
     },
     {
       title: "Contact",
-      to: "/",
+      to: "/contact",
     },
   ];
 
@@ -32,13 +36,13 @@ export default function NavbarMenu() {
   }
 
   function changeTheme() {
-    if (darkTheme) {
+    if (lightTheme) {
       document.querySelector("html").classList.remove("dark");
     } else {
       document.querySelector("html").classList.add("dark");
     }
 
-    setDarkTheme(!darkTheme);
+    setlightTheme(!lightTheme);
   }
 
   return (
@@ -77,7 +81,7 @@ export default function NavbarMenu() {
               <li key={index} className="w-100">
                 <Link
                   to={item?.to}
-                  className={`md:p-5 py-2 block dark:text-white hover:text-purple-500`}
+                  className={`md:p-5 py-2 block text-white hover:text-purple-400`}
                 >
                   {item?.title}
                 </Link>
@@ -86,21 +90,21 @@ export default function NavbarMenu() {
           })}
           <li>
             <label
-              htmlFor="dark-toggle"
+              htmlFor="dark-theme-toggle"
               className="flex items-center cursor-pointer md:p-5 py-2"
             >
               <div className="relative">
                 <input
                   type="checkbox"
                   name="dark-mode"
-                  id="dark-toggle"
+                  id="dark-theme-toggle"
                   className="checkbox hidden"
                   onClick={changeTheme}
                 />
-                <div className="block border-[2px] w-11 h-6 rounded-full border-gray-900 dark:border-white"></div>
+                <div className="block border-[2px] w-11 h-6 rounded-full border-white"></div>
                 <div className="dot absolute left-1 top-1 w-4 h-4 rounded-full transition">
                   <img
-                    src={darkTheme ? sunIcon : moonIcon}
+                    src={!lightTheme ? sunIcon : moonIcon}
                     width={25}
                     alt="theme-icon"
                   />
