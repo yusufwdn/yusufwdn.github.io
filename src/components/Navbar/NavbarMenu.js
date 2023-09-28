@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-import sunIcon from "../../assets/icons/sun.ico";
-import moonIcon from "../../assets/icons/moon-yellow.ico";
+// import sunIcon from "../../assets/icons/sun.ico";
+// import moonIcon from "../../assets/icons/moon-yellow.ico";
 
 export default function NavbarMenu() {
-  const [lightTheme, setlightTheme] = useState(false);
+  // const [darkTheme, setDarkTheme] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
 
   const menu = [
@@ -35,15 +35,15 @@ export default function NavbarMenu() {
     setShowMenu(!showMenu);
   }
 
-  function changeTheme() {
-    if (lightTheme) {
-      document.querySelector("html").classList.remove("dark");
-    } else {
-      document.querySelector("html").classList.add("dark");
-    }
+  // function changeTheme() {
+  //   if (darkTheme) {
+  //     document.querySelector("html").classList.remove("dark");
+  //   } else {
+  //     document.querySelector("html").classList.add("dark");
+  //   }
 
-    setlightTheme(!lightTheme);
-  }
+  //   setDarkTheme(!darkTheme);
+  // }
 
   return (
     <>
@@ -81,14 +81,14 @@ export default function NavbarMenu() {
               <li key={index} className="w-100">
                 <Link
                   to={item?.to}
-                  className={`md:p-5 py-2 block text-white hover:text-purple-400`}
+                  className={`md:p-5 py-2 block text-white hover:text-purple-300`}
                 >
                   {item?.title}
                 </Link>
               </li>
             );
           })}
-          <li>
+          {/* <li>
             <label
               htmlFor="dark-theme-toggle"
               className="flex items-center cursor-pointer md:p-5 py-2"
@@ -104,14 +104,14 @@ export default function NavbarMenu() {
                 <div className="block border-[2px] w-11 h-6 rounded-full border-white"></div>
                 <div className="dot absolute left-1 top-1 w-4 h-4 rounded-full transition">
                   <img
-                    src={!lightTheme ? sunIcon : moonIcon}
+                    src={!darkTheme ? sunIcon : moonIcon}
                     width={25}
                     alt="theme-icon"
                   />
                 </div>
               </div>
             </label>
-          </li>
+          </li> */}
         </ul>
       </div>
     </>

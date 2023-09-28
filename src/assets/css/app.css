@@ -10,20 +10,6 @@ body {
     font-family: "Poppins";
 }
 
-.light-theme {
-    --light-color: #fff;
-    --background-color: var(--light-color);
-    --text-color: #000;
-    --footer-background-color: var(--light-color);
-}
-
-.dark-theme {
-    --dark-color: #141212;
-    --background-color: var(--dark-color);
-    --text-color: #fff;
-    --footer-background-color: var(--dark-color);
-}
-
 .header-name {
     margin-top: 1rem;
     margin-bottom: .5rem;
