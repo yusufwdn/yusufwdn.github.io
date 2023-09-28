@@ -25,10 +25,10 @@ export default function NavbarMenu() {
       title: "Skills",
       to: "/skills",
     },
-    {
-      title: "Contact",
-      to: "/contact",
-    },
+    // {
+    //   title: "Contact",
+    //   to: "/contact",
+    // },
   ];
 
   function toggleMenu() {
