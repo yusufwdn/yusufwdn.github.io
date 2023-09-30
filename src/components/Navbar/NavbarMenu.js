@@ -14,7 +14,7 @@ export default function NavbarMenu() {
       to: "/",
     },
     {
-      title: "Experience",
+      title: "Pengalaman",
       to: "/experience",
     },
     {
@@ -22,7 +22,7 @@ export default function NavbarMenu() {
       to: "/portofolio",
     },
     {
-      title: "Skills",
+      title: "Kemampuan",
       to: "/skills",
     },
     // {
