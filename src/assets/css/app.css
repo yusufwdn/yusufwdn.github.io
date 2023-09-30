@@ -23,6 +23,10 @@ input:checked~.dot {
     /* background-color: #132b50; */
 }
 
-.box-shadow-1 {
+.box-shadow-10 {
     box-shadow: 10px 10px black;
+}
+
+.box-shadow-5 {
+    box-shadow: 5px 5px black;
 }
