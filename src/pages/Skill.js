@@ -20,7 +20,7 @@ function Stars({ total }) {
         return (
           <img
             key={`star.${key}`}
-            className="w-5 mx-1"
+            className="w-5 md:mx-1 mx-0"
             width="48"
             height="48"
             src={imgUrl}
@@ -131,7 +131,7 @@ export default function Skill() {
       },
     },
     {
-      title: "Git Version Control",
+      title: "Git VCS",
       star: 8,
       description:
         "Memiliki pemahaman yang cukup baik tentang konsep serta penggunaan perintah Git, menyelesaikan konflik pada commit, serta melakukan kolaborasi dengan tim lain pada suatu proyek. ",
