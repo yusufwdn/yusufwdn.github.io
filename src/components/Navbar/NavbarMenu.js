@@ -14,16 +14,16 @@ export default function NavbarMenu() {
       to: "/",
     },
     {
+      title: "Kemampuan",
+      to: "/skills",
+    },
+    {
       title: "Pengalaman",
       to: "/experience",
     },
     {
       title: "Portofolio",
       to: "/portofolio",
-    },
-    {
-      title: "Kemampuan",
-      to: "/skills",
     },
     // {
     //   title: "Contact",
