@@ -30,3 +30,7 @@ input:checked~.dot {
 .box-shadow-5 {
     box-shadow: 5px 5px black;
 }
+
+.box-shadow-grey-5 {
+    box-shadow: 5px 5px rgb(141, 141, 141);
+}
