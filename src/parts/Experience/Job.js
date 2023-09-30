@@ -8,12 +8,12 @@ export default function Job() {
       job_title: "Web Developer",
       job_range: "Sep 2021 - Now",
       job_descriptions: [
-        "Analyze the client's desired application system flow.",
-        "Design, develop, test, and maintain web application systems",
-        "Develop API services for web and mobile application developer needs on projects.",
-        "Integrate applications with third-party services like payment gateway, PPOB system, SMS gateway, shipment service, etc.",
-        "Collaborate with other teams on projects to achieve project target.",
-        "Ensuring the codes is readable and easy to maintain.",
+        "Analisis aliran sistem aplikasi yang diinginkan klien.",
+        "Merancang, mengembangkan, menguji, dan memelihara sistem aplikasi web",
+        "Mengembangkan layanan API untuk kebutuhan pengembang aplikasi web dan seluler pada proyek.",
+        "Integrasikan aplikasi dengan layanan pihak ketiga seperti gateway pembayaran, sistem PPOB, SMS gateway, layanan pengiriman, dll.",
+        "Berkolaborasi dengan tim lain dalam proyek untuk mencapai target proyek.",
+        "Memastikan kode dapat dibaca dan mudah dipelihara.",
       ],
     },
     {
@@ -22,9 +22,9 @@ export default function Job() {
       job_title: "ETL Developer",
       job_range: "Sep 2020 - Agu 2021",
       job_descriptions: [
-        "Develop reporting application for monthly financial report in a bank.",
-        "Maintenance existing application (add new features and bug fixing).",
-        "Become a consultant to assist finance companies in working on monthly financial reports.",
+        "Mengembangkan aplikasi pelaporan laporan keuangan bulanan di bank.",
+        "Melakukan maintenance pada aplikasi yang sudah berjalan, baik itu penambahan fitur baru maupun perbaikan bug.",
+        "Menjadi konsultan untuk membantu perusahaan pembiayaan dalam mengerjakan laporan keuangan bulanan.",
       ],
     },
   ];
