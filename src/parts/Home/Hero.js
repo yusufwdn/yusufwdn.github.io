@@ -3,9 +3,9 @@ import React from "react";
 export default function Hero() {
   return (
     <section className="flex justify-center h-screen bg-black text-white">
-      <div className="flex flex-col justify-center items-center mt-44 z-10">
+      <div className="flex flex-col justify-center items-center mt-28 md:mt-48 z-10">
         <h2 className="text-4xl md:text-6xl">Yusuf Wandana</h2>
-        <h3 className="mt-2 text-xl">Full-Stack Web Developer</h3>
+        <h3 className="mt-2 text-xl">Web Developer</h3>
         <div className="flex flex-wrap my-3">
           <div className="flex gap-3 pt-2 pb-4 rounded-md social-wrapper">
             <a
